@@ -1,0 +1,87 @@
+name: getx_state
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  flutter_svg: ^2.0.5
+  dio: ^5.1.1
+  dartz: ^0.10.1
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/illustration_login.svg
+    - assets/images/ic_facebook.svg
+    - assets/images/ic_google.svg
+    - assets/images/ic_mail.svg
+    - assets/images/ic_key.svg
+    - assets/images/ic_menu.svg
+    - assets/images/joy_game.svg
+    - assets/images/landing_image.png
+    - assets/images/bg_landing_bottom.svg
+    - assets/images/icandy.png
+    - assets/images/lemon_sky.png
+    - assets/images/jeric_verse.png
+    - assets/images/game_economy.png
+    - assets/images/intro_image.svg
+    - assets/images/upcoming_games.svg
+    - assets/images/stategig_investor.svg
+    - assets/images/ivestor1.png
+    - assets/images/ivestor2.png
+    - assets/images/ivestor3.png
+    - assets/images/ivestor4.png
+    - assets/images/ivestor5.png
+    - assets/images/ivestor6.png
+    - assets/images/ivestor7.png
+    - assets/images/ivestor8.png
+    - assets/images/ivestor9.png
+    - assets/images/ivestor10.png
+    - assets/images/ivestor11.png
+    - assets/images/ivestor12.png
+    - assets/images/ivestor13.png
+    - assets/images/ivestor14.png
+    - assets/images/ivestor15.png
+    - assets/images/ivestor16.png
+    - assets/images/ic_twitter.svg
+    - assets/images/ic_medium.svg
+    - assets/images/ic_discord.svg
+    - assets/images/ic_telegram.svg
+    - assets/images/ic_github.svg
+    - assets/images/news.svg
+    - assets/images/bg_news.png
+    - assets/images/news1.png
+    - assets/images/news2.png
+    - assets/images/game_bg.png
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+        - asset: assets/fonts/Montserrat-Italic.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
