@@ -47,4 +47,13 @@ class RegisterController extends GetxController {
   void onPressedRegister() {
     if (formKey.currentState!.validate()) _signupProses();
   }
+
+  @override
+  void onClose() {
+    nameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
 }

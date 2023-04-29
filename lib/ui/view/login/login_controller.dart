@@ -37,4 +37,11 @@ class LoginController extends GetxController {
   }
 
   void onTabToRegister() => Get.to(const RegisterView());
+
+  @override
+  void onClose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.onClose();
+  }
 }
