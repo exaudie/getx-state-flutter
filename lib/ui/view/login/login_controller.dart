@@ -2,9 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import '../../../application/routers_app.dart';
 import '../../../infrastructure/services/api_service.dart';
-import '../home/home_view.dart';
-import '../register/register_view.dart';
 
 class LoginController extends GetxController {
   final _apiService = ApiService();
@@ -27,7 +26,7 @@ class LoginController extends GetxController {
 
     results.fold(
       (errorMessage) => Get.snackbar('Error', errorMessage),
-      (success) => Get.off(const HomeView()),
+      (success) => Get.offNamed(RoutesApp.home),
     );
     isLoading.value = false;
   }
@@ -36,7 +35,7 @@ class LoginController extends GetxController {
     if (formKey.currentState!.validate()) _signinProcess();
   }
 
-  void onTabToRegister() => Get.to(const RegisterView());
+  void onTabToRegister() => Get.toNamed(RoutesApp.register);
 
   @override
   void onClose() {

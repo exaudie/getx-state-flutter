@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../infrastructure/helpers/app_colors.dart';
-import '../../../../infrastructure/helpers/app_text_style.dart';
-import '../../../../infrastructure/helpers/app_view.dart';
+import '../../../../infrastructure/helpers/colors_app.dart';
+import '../../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../../infrastructure/helpers/views_app.dart';
 
 class NewsSection extends StatelessWidget {
   const NewsSection({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class NewsSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          AppView.verticalSpace(25),
+          ViewsApp.verticalSpace(25),
           SizedBox(
             width: double.infinity,
             height: 22.5,
@@ -26,16 +26,16 @@ class NewsSection extends StatelessWidget {
               fit: BoxFit.fitHeight,
             ),
           ),
-          AppView.verticalSpace(16),
+          ViewsApp.verticalSpace(16),
           Text(
             'Eclipse to the world of the end of our story Inside',
-            style: AppTextStyle.montserratFS8Regular.copyWith(color: Colors.white),
+            style: TextStyleApp.montserratFS8Regular.copyWith(color: Colors.white),
           ),
-          AppView.verticalSpace(30),
+          ViewsApp.verticalSpace(30),
           _newsList(),
-          AppView.verticalSpace(24),
+          ViewsApp.verticalSpace(24),
           _buttonItem('VIEW ALL'),
-          AppView.verticalSpace(24),
+          ViewsApp.verticalSpace(24),
         ],
       ),
     );
@@ -57,7 +57,7 @@ class NewsSection extends StatelessWidget {
                   fit: BoxFit.fitHeight,
                 ),
               ),
-              AppView.horizontalSpace(16),
+              ViewsApp.horizontalSpace(16),
               SizedBox(
                 height: 257.37,
                 child: Image.asset(
@@ -97,7 +97,7 @@ class NewsSection extends StatelessWidget {
         ]),
         child: Text(
           text,
-          style: AppTextStyle.montserratFS8Bold.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS8Bold.copyWith(color: Colors.white),
         ),
       );
 

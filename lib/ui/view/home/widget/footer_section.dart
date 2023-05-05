@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../infrastructure/helpers/app_text_style.dart';
-import '../../../../infrastructure/helpers/app_view.dart';
+import '../../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../../infrastructure/helpers/views_app.dart';
 
 class FooterSection extends StatelessWidget {
   const FooterSection({Key? key}) : super(key: key);
@@ -11,18 +11,18 @@ class FooterSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        AppView.verticalSpace(20),
+        ViewsApp.verticalSpace(20),
         SizedBox(
           width: 127,
           child: SvgPicture.asset('assets/images/joy_game.svg', fit: BoxFit.fill),
         ),
-        AppView.verticalSpace(28),
+        ViewsApp.verticalSpace(28),
         Text(
           'METAVERSE GAMING',
-          style: AppTextStyle.montserratFS13Bold.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS13Bold.copyWith(color: Colors.white),
         ),
-        Text('BY JOY GAME PLAYER', style: AppTextStyle.montserratFS12SemiBold.copyWith(color: Colors.white)),
-        AppView.verticalSpace(28),
+        Text('BY JOY GAME PLAYER', style: TextStyleApp.montserratFS12SemiBold.copyWith(color: Colors.white)),
+        ViewsApp.verticalSpace(28),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,29 +31,29 @@ class FooterSection extends StatelessWidget {
             _help(),
           ],
         ),
-        AppView.verticalSpace(35),
+        ViewsApp.verticalSpace(35),
         Text(
           'JOIN OUR COMMUNITY',
-          style: AppTextStyle.montserratFS13Bold.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS13Bold.copyWith(color: Colors.white),
         ),
-        AppView.verticalSpace(32),
+        ViewsApp.verticalSpace(32),
         _iconCommunity(),
-        AppView.verticalSpace(18),
+        ViewsApp.verticalSpace(18),
         Text(
           '© 2022 Joy Games',
-          style: AppTextStyle.montserratFS13Regular.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS13Regular.copyWith(color: Colors.white),
         ),
-        AppView.verticalSpace(18),
+        ViewsApp.verticalSpace(18),
         Text(
           'Terms & Conditions',
-          style: AppTextStyle.montserratFS13Regular.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS13Regular.copyWith(color: Colors.white),
         ),
-        AppView.verticalSpace(18),
+        ViewsApp.verticalSpace(18),
         Text(
           'Privacy Policy',
-          style: AppTextStyle.montserratFS13Regular.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS13Regular.copyWith(color: Colors.white),
         ),
-        AppView.verticalSpace(44),
+        ViewsApp.verticalSpace(44),
       ],
     );
   }
@@ -100,7 +100,7 @@ class FooterSection extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: ((e.key == 0) ? 30 : 20)),
                 child: Text(
                   e.value,
-                  style: ((e.key == 0) ? AppTextStyle.montserratFS12Bold : AppTextStyle.montserratFS12Regular)
+                  style: ((e.key == 0) ? TextStyleApp.montserratFS12Bold : TextStyleApp.montserratFS12Regular)
                       .copyWith(color: Colors.white),
                 ),
               ),
@@ -125,7 +125,7 @@ class FooterSection extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: ((e.key == 0) ? 30 : 20)),
                 child: Text(
                   e.value,
-                  style: ((e.key == 0) ? AppTextStyle.montserratFS12Bold : AppTextStyle.montserratFS12Regular)
+                  style: ((e.key == 0) ? TextStyleApp.montserratFS12Bold : TextStyleApp.montserratFS12Regular)
                       .copyWith(color: Colors.white),
                 ),
               ),

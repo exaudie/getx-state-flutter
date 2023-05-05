@@ -4,13 +4,11 @@ import 'package:get/get.dart';
 import 'home_controller.dart';
 import 'widget/widget_section.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(HomeController());
-
     return Scaffold(
       body: SafeArea(
         child: Container(

@@ -2,26 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../infrastructure/helpers/app_colors.dart';
-import '../../../infrastructure/helpers/app_text_style.dart';
-import '../../../infrastructure/helpers/app_view.dart';
-import '../../../infrastructure/helpers/validation_field.dart';
+import '../../../infrastructure/helpers/colors_app.dart';
+import '../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../infrastructure/helpers/views_app.dart';
+import '../../../infrastructure/helpers/validations_field.dart';
 import '../../shared/text_field_app.dart';
 import 'register_controller.dart';
 
-class RegisterView extends StatelessWidget {
+class RegisterView extends GetView<RegisterController> {
   const RegisterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(RegisterController());
-
     return Scaffold(
       backgroundColor: AppColors.bgLogin,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            AppView.verticalSpace(50),
+            ViewsApp.verticalSpace(50),
             SvgPicture.asset(
               'assets/images/illustration_login.svg',
               height: 100,
@@ -42,35 +40,35 @@ class RegisterView extends StatelessWidget {
                     Text(
                       key: const Key('title.register'),
                       'Register',
-                      style: AppTextStyle.poppinsFS20SemiBold.copyWith(
+                      style: TextStyleApp.poppinsFS20SemiBold.copyWith(
                         color: AppColors.blackApp,
                       ),
                     ),
-                    AppView.verticalSpace(24),
+                    ViewsApp.verticalSpace(24),
                     TextFieldApp(
                       key: const Key('field.name'),
                       controller: controller.nameController,
                       labelText: 'Name',
                       prefixIcon: Icons.person,
-                      validator: (value) => ValidateField.required(value, 'name'),
+                      validator: (value) => ValidationsField.required(value, 'name'),
                     ),
-                    AppView.verticalSpace(16),
+                    ViewsApp.verticalSpace(16),
                     TextFieldApp(
                       controller: controller.emailController,
                       key: const Key('field.email'),
                       labelText: 'Email',
                       prefixIcon: Icons.mail,
-                      validator: (value) => ValidateField.required(value, 'email'),
+                      validator: (value) => ValidationsField.required(value, 'email'),
                     ),
-                    AppView.verticalSpace(16),
+                    ViewsApp.verticalSpace(16),
                     TextFieldApp(
                       key: const Key('field.phone'),
                       controller: controller.phoneController,
                       labelText: 'Phone',
                       prefixIcon: Icons.phone_android,
-                      validator: (value) => ValidateField.required(value, 'phone'),
+                      validator: (value) => ValidationsField.required(value, 'phone'),
                     ),
-                    AppView.verticalSpace(16),
+                    ViewsApp.verticalSpace(16),
                     Obx(() => TextFieldApp(
                           key: const Key('field.pass'),
                           controller: controller.passwordController,
@@ -79,11 +77,11 @@ class RegisterView extends StatelessWidget {
                           onTabSuffix: controller.onPressedObscureText,
                           labelText: 'Password',
                           prefixIcon: Icons.key,
-                          validator: (value) => ValidateField.required(value, 'password'),
+                          validator: (value) => ValidationsField.required(value, 'password'),
                         )),
-                    AppView.verticalSpace(24),
+                    ViewsApp.verticalSpace(24),
                     Obx(() => SizedBox(
-                          width: AppView.screenWidthFraction(context),
+                          width: ViewsApp.screenWidthFraction(context),
                           height: 48,
                           child: (controller.isLoading.value)
                               ? const Center(child: CircularProgressIndicator())
@@ -114,7 +112,7 @@ class RegisterView extends StatelessWidget {
           children: [
             Text(
               'Already registered? ',
-              style: AppTextStyle.poppinsFS12Regular.copyWith(
+              style: TextStyleApp.poppinsFS12Regular.copyWith(
                 color: AppColors.blackApp,
               ),
             ),
@@ -122,7 +120,7 @@ class RegisterView extends StatelessWidget {
               onTap: controller.onTapToLogin,
               child: Text(
                 'Login',
-                style: AppTextStyle.poppinsFS12Regular.copyWith(
+                style: TextStyleApp.poppinsFS12Regular.copyWith(
                   color: AppColors.purplePrimary,
                 ),
               ),

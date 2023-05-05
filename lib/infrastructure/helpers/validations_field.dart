@@ -1,4 +1,4 @@
-class ValidateField {
+class ValidationsField {
   static String? required(String value, String fieldLabel) {
     if (value.isEmpty) return 'The $fieldLabel field cannot be empty';
 
