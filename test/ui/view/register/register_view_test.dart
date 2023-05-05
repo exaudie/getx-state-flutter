@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:getx_state/infrastructure/helpers/validation_field.dart';
+import 'package:getx_state/infrastructure/helpers/validations_field.dart';
 import 'package:getx_state/ui/view/register/register_view.dart';
 
 void main() {
@@ -26,7 +26,7 @@ void main() {
   });
 
   test('field validation test', () {
-    expect(ValidateField.required('ekoss', 'name'), null);
-    expect(ValidateField.required('', 'name'), 'Field name tidak boleh kosong');
+    expect(ValidationsField.required('ekoss', 'name'), null);
+    expect(ValidationsField.required('', 'name'), 'Field name tidak boleh kosong');
   });
 }

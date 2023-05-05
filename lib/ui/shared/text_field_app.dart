@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../infrastructure/helpers/app_colors.dart';
-import '../../infrastructure/helpers/app_text_style.dart';
+import '../../infrastructure/helpers/colors_app.dart';
+import '../../infrastructure/helpers/text_styles_app.dart';
 
 class TextFieldApp extends StatelessWidget {
   final Color fillColor;
@@ -32,7 +32,7 @@ class TextFieldApp extends StatelessWidget {
         TextFormField(
           controller: controller,
           obscureText: obscureText,
-          style: AppTextStyle.poppinsFS12Bold,
+          style: TextStyleApp.poppinsFS12Bold,
           decoration: InputDecoration(
             suffix: suffix == null
                 ? null
@@ -97,7 +97,7 @@ class TextFieldApp extends StatelessWidget {
           left: 50,
           child: Text(
             labelText ?? '',
-            style: AppTextStyle.poppinsFS10Regular.copyWith(
+            style: TextStyleApp.poppinsFS10Regular.copyWith(
               color: AppColors.blackApp,
             ),
           ),

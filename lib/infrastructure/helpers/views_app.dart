@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class AppView {
+class ViewsApp {
   static MediaQueryData screenQuery(BuildContext context) => MediaQuery.of(context);
 
   static Widget verticalSpace(double height) => SizedBox(height: height);

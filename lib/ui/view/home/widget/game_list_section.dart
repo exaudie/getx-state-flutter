@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../infrastructure/enums/game_type.dart';
-import '../../../../infrastructure/helpers/app_text_style.dart';
-import '../../../../infrastructure/helpers/app_view.dart';
+import '../../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../../infrastructure/helpers/views_app.dart';
 import '../home_controller.dart';
 
 class GameListSection extends StatelessWidget {
@@ -40,12 +40,12 @@ class GameListSection extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyle.montserratFS22Bold.copyWith(color: Colors.white),
+            style: TextStyleApp.montserratFS22Bold.copyWith(color: Colors.white),
           ),
-          AppView.verticalSpace(12),
+          ViewsApp.verticalSpace(12),
           Text(
             subtitle,
-            style: AppTextStyle.montserratFS18Regular.copyWith(color: Colors.white),
+            style: TextStyleApp.montserratFS18Regular.copyWith(color: Colors.white),
           ),
         ],
       ),
@@ -72,7 +72,7 @@ class GameListSection extends StatelessWidget {
             color: Colors.black.withOpacity(0.2),
             child: Text(
               title,
-              style: AppTextStyle.montserratFS22Bold.copyWith(color: Colors.white),
+              style: TextStyleApp.montserratFS22Bold.copyWith(color: Colors.white),
             ),
           ),
         ),

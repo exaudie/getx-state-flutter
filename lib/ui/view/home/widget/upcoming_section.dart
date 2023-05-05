@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../infrastructure/helpers/app_colors.dart';
-import '../../../../infrastructure/helpers/app_text_style.dart';
-import '../../../../infrastructure/helpers/app_view.dart';
+import '../../../../infrastructure/helpers/colors_app.dart';
+import '../../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../../infrastructure/helpers/views_app.dart';
 
 class UpcomingSection extends StatelessWidget {
   const UpcomingSection({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class UpcomingSection extends StatelessWidget {
             fit: BoxFit.fitHeight,
           ),
         ),
-        AppView.verticalSpace(16),
+        ViewsApp.verticalSpace(16),
         Text(
           'Joy Games aims to not just create a platform but also will play an active role in the development '
           'and curation of gaming content on the platform, the upkeep of the codebase, '
@@ -30,11 +30,11 @@ class UpcomingSection extends StatelessWidget {
           'via a mixture of of inhouse development or co-development with our strategic partners, '
           'who are experienced and successful game development studios.',
           textAlign: TextAlign.center,
-          style: AppTextStyle.montserratFS15Regular.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS15Regular.copyWith(color: Colors.white),
         ),
-        AppView.verticalSpace(27),
+        ViewsApp.verticalSpace(27),
         _buttonUpcoming(),
-        AppView.verticalSpace(22),
+        ViewsApp.verticalSpace(22),
       ]),
     );
   }
@@ -70,7 +70,7 @@ class UpcomingSection extends StatelessWidget {
         ]),
         child: Text(
           text,
-          style: AppTextStyle.montserratFS22Bold.copyWith(color: Colors.white),
+          style: TextStyleApp.montserratFS22Bold.copyWith(color: Colors.white),
         ),
       );
 }

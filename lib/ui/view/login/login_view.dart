@@ -2,28 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../infrastructure/helpers/app_colors.dart';
-import '../../../infrastructure/helpers/app_text_style.dart';
-import '../../../infrastructure/helpers/app_view.dart';
-import '../../../infrastructure/helpers/validation_field.dart';
+import '../../../infrastructure/helpers/colors_app.dart';
+import '../../../infrastructure/helpers/text_styles_app.dart';
+import '../../../infrastructure/helpers/views_app.dart';
+import '../../../infrastructure/helpers/validations_field.dart';
 import '../../shared/icon_button_app.dart';
 import '../../shared/text_field_app.dart';
 import 'login_controller.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
-
     return Scaffold(
       backgroundColor: AppColors.bgLogin,
       body: SingleChildScrollView(
         key: const Key('scroll.login'),
         child: Column(
           children: [
-            AppView.verticalSpace(50),
+            ViewsApp.verticalSpace(50),
             SvgPicture.asset(
               'assets/images/illustration_login.svg',
               height: 150,
@@ -41,11 +39,11 @@ class LoginView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   _headerPage(),
-                  AppView.verticalSpace(24),
+                  ViewsApp.verticalSpace(24),
                   _loginAccountExisting(),
-                  AppView.verticalSpace(18),
+                  ViewsApp.verticalSpace(18),
                   _lineOr(),
-                  AppView.verticalSpace(18),
+                  ViewsApp.verticalSpace(18),
                   _contentLogin(context, controller),
                   _notHaveAccount(controller),
                 ],
@@ -61,13 +59,13 @@ class LoginView extends StatelessWidget {
         children: [
           Text(
             'Welcome to',
-            style: AppTextStyle.poppinsFS20SemiBold.copyWith(
+            style: TextStyleApp.poppinsFS20SemiBold.copyWith(
               color: AppColors.blackApp,
             ),
           ),
           Text(
             'Joy Games',
-            style: AppTextStyle.poppinsFS24Bold.copyWith(
+            style: TextStyleApp.poppinsFS24Bold.copyWith(
               color: AppColors.purplePrimary,
             ),
           ),
@@ -81,7 +79,7 @@ class LoginView extends StatelessWidget {
             icon: 'assets/images/ic_google.svg',
             onPressed: () {},
           ),
-          AppView.verticalSpace(16),
+          ViewsApp.verticalSpace(16),
           IconButtonApp(
             title: 'Login with Facebook',
             icon: 'assets/images/ic_facebook.svg',
@@ -99,7 +97,7 @@ class LoginView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text('OR', style: AppTextStyle.poppinsFS16Regular.copyWith(color: AppColors.blackApp)),
+            child: Text('OR', style: TextStyleApp.poppinsFS16Regular.copyWith(color: AppColors.blackApp)),
           ),
           const Expanded(
             child: Divider(
@@ -119,17 +117,17 @@ class LoginView extends StatelessWidget {
               onChanged: (value) {},
             ),
           ),
-          AppView.horizontalSpace(8),
+          ViewsApp.horizontalSpace(8),
           Text(
             'Remember me',
-            style: AppTextStyle.poppinsFS12Regular.copyWith(
+            style: TextStyleApp.poppinsFS12Regular.copyWith(
               color: AppColors.blackApp,
             ),
           ),
           const Spacer(),
           Text(
             'Forgot Password?',
-            style: AppTextStyle.poppinsFS12Regular.copyWith(
+            style: TextStyleApp.poppinsFS12Regular.copyWith(
               color: AppColors.purplePrimary,
             ),
           ),
@@ -145,9 +143,9 @@ class LoginView extends StatelessWidget {
               controller: controller.emailController,
               labelText: 'Email',
               prefixIcon: Icons.mail,
-              validator: (value) => ValidateField.required(value, 'email'),
+              validator: (value) => ValidationsField.required(value, 'email'),
             ),
-            AppView.verticalSpace(16),
+            ViewsApp.verticalSpace(16),
             Obx(() => TextFieldApp(
                   key: const Key('field.pass'),
                   controller: controller.passwordController,
@@ -156,13 +154,13 @@ class LoginView extends StatelessWidget {
                   onTabSuffix: controller.onPressedObscureText,
                   labelText: 'Password',
                   prefixIcon: Icons.key,
-                  validator: (value) => ValidateField.required(value, 'password'),
+                  validator: (value) => ValidationsField.required(value, 'password'),
                 )),
-            AppView.verticalSpace(20),
+            ViewsApp.verticalSpace(20),
             _forgetPassword(),
-            AppView.verticalSpace(14),
+            ViewsApp.verticalSpace(14),
             Obx(() => SizedBox(
-                  width: AppView.screenWidthFraction(context),
+                  width: ViewsApp.screenWidthFraction(context),
                   height: 48,
                   child: (controller.isLoading.value)
                       ? const Center(child: CircularProgressIndicator())
@@ -186,7 +184,7 @@ class LoginView extends StatelessWidget {
           children: [
             Text(
               'Don’t have an account? ',
-              style: AppTextStyle.poppinsFS12Regular.copyWith(
+              style: TextStyleApp.poppinsFS12Regular.copyWith(
                 color: AppColors.blackApp,
               ),
             ),
@@ -195,7 +193,7 @@ class LoginView extends StatelessWidget {
               onTap: controller.onTabToRegister,
               child: Text(
                 'Register',
-                style: AppTextStyle.poppinsFS12Regular.copyWith(
+                style: TextStyleApp.poppinsFS12Regular.copyWith(
                   color: AppColors.purplePrimary,
                 ),
               ),

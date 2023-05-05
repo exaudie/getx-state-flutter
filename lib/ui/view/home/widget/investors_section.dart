@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../infrastructure/helpers/app_colors.dart';
-import '../../../../infrastructure/helpers/app_view.dart';
+import '../../../../infrastructure/helpers/colors_app.dart';
+import '../../../../infrastructure/helpers/views_app.dart';
 
 class InvestorsSection extends StatelessWidget {
   const InvestorsSection({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class InvestorsSection extends StatelessWidget {
       color: AppColors.bgUpcoming,
       child: Column(
         children: [
-          AppView.verticalSpace(21),
+          ViewsApp.verticalSpace(21),
           SizedBox(
               width: double.infinity,
               height: 22.5,
@@ -38,7 +38,7 @@ class InvestorsSection extends StatelessWidget {
               ),
             ),
           ),
-          AppView.verticalSpace(22),
+          ViewsApp.verticalSpace(22),
         ],
       ),
     );

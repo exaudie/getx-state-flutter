@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../infrastructure/helpers/app_colors.dart';
-import '../../infrastructure/helpers/app_text_style.dart';
-import '../../infrastructure/helpers/app_view.dart';
+import '../../infrastructure/helpers/colors_app.dart';
+import '../../infrastructure/helpers/text_styles_app.dart';
+import '../../infrastructure/helpers/views_app.dart';
 
 class IconButtonApp extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -28,7 +28,7 @@ class IconButtonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: AppView.screenWidthFraction(context),
+      width: ViewsApp.screenWidthFraction(context),
       height: 48,
       child: ElevatedButton.icon(
         icon: SizedBox(width: 20, height: 20, child: SvgPicture.asset(icon)),
@@ -41,7 +41,7 @@ class IconButtonApp extends StatelessWidget {
         ),
         label: Text(
           title,
-          style: AppTextStyle.poppinsFS16Regular.copyWith(color: textColor),
+          style: TextStyleApp.poppinsFS16Regular.copyWith(color: textColor),
         ),
       ),
     );
